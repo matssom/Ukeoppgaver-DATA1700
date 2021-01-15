@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ukeoppgaver Uke 1 - Oppgave 6</title>
 </head>
 <body>
+
+    <label for="input"></label>
+    <input id="input" type="text" onchange="visMelding(this.value)">
+
+    <script>
+
+        const visMelding = function (inndata) {
+            inndata = inndata.fontcolor("red")
+            document.write(inndata);
+        }
+
+    </script>
 
 </body>
 </html>
