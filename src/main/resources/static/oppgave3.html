@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ukeoppgaver Uke 1 - Oppgave 3</title>
+</head>
+<body>
+
+    <label for="input"></label>
+    <input id="input" type="text" onchange="visMelding(this.value)">
+
+    <script>
+
+        const visMelding = function (inndata) {
+            const ut = "Du skrev: " + inndata
+            document.write(ut)
+        }
+
+    </script>
+
+</body>
+</html>
