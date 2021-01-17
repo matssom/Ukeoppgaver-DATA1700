@@ -8,11 +8,11 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.matssom</groupId>
+    <artifactId>oppgaver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ukeoppgaver_1</name>
-    <description>Demo project for Spring Boot</description>
+    <name>ukeoppgaver_data1700</name>
+    <description>Losningsforslag for alle ukeoppgave i faget DATA1700 på OsloMet</description>
 
     <properties>
         <java.version>11</java.version>
