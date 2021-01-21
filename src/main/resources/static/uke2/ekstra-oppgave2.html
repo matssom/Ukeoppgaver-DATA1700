@@ -5,12 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Uke 2 - Oppgave 1</title>
+    <title>Uke 2 - Oppgave 3</title>
 </head>
 <body>
 
     <button onclick="visPersonRegister()">Vis personregister</button>
-    <div id="personRegister"></div>
+
+    <div id="personRegister">
+
+    </div>
 
     <script type="application/javascript">
         function visPersonRegister(){
@@ -28,7 +31,34 @@
             };
             personRegister.push(person2);
 
+            const person3 = {
+                navn : "Anne Hansen",
+                adresse : "Darres gate 82",
+                telefonnr : "34894378"
+            };
+            personRegister.push(person3);
+
             // skriv ut
+            srkivUt(personRegister)
+
+            //sorter på lang form
+            personRegister.sort(sorterRegister)
+
+            function  sorterRegister(a, b) {
+                if (a.navn > b.navn) {
+                    return 1
+                } else {
+                    return  -1
+                }
+            }
+
+            //Sorter på kort form (akkurat samme funksjonalitet)
+            personRegister.sort((a, b) => a.navn > b.navn ? 1 : -1)
+
+            srkivUt(personRegister)
+        }
+
+        function  srkivUt(personRegister) {
             let ut = "<table><tr>" +
                 "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
                 "</tr>";
@@ -37,11 +67,9 @@
                 ut+="<td>"+p.navn+"</td><td>"+p.adresse+"</td><td>"+p.telefonnr+"</td>";
                 ut+="</tr>";
             }
-
-
-
-            document.getElementById("personRegister").innerHTML=ut;
+            document.getElementById("personRegister").innerHTML+=ut;
         }
+
     </script>
 
 </body>

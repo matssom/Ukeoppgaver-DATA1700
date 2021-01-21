@@ -28,6 +28,13 @@
             };
             personRegister.push(person2);
 
+            const person3 = {
+                navn : "Henrik Hansen",
+                adresse : "Darres gate 82",
+                telefonnr : "34894378"
+            };
+            personRegister.push(person3);
+
             // skriv ut
             let ut = "<table><tr>" +
                 "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
@@ -37,9 +44,6 @@
                 ut+="<td>"+p.navn+"</td><td>"+p.adresse+"</td><td>"+p.telefonnr+"</td>";
                 ut+="</tr>";
             }
-
-
-
             document.getElementById("personRegister").innerHTML=ut;
         }
     </script>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uke 2 - Oppgave 3</title>
+</head>
+<body>
+
+    <button onclick="visPersonRegister()">Vis personregister</button>
+    <div id="personRegister"></div>
+
+    <script type="application/javascript">
+        function visPersonRegister(){
+            const personRegister=[];
+            const person1 = {
+                navn : "Line Jensen",
+                adresse : "Askerveien 82",
+                telefonnr : "12334455"
+            };
+            personRegister.push(person1);
+            const person2 = {
+                navn : "Ole Hansen",
+                adresse : "Osloveien 82",
+                telefonnr : "99887766"
+            };
+            personRegister.push(person2);
+
+            const person3 = {
+                navn : "Anne Hansen",
+                adresse : "Darres gate 82",
+                telefonnr : "34894378"
+            };
+            personRegister.push(person3);
+
+            const person4 = {
+                navn : "Birk Hansen",
+                adresse : "Narvesen",
+                telefonnr : "96694373"
+            };
+            personRegister.push(person4);
+
+            // skriv ut
+            srkivUt(personRegister)
+
+            //sorter på lang form
+            personRegister.sort(sorterRegister)
+
+            function  sorterRegister(a, b) {
+                if (a.navn > b.navn) {
+                    return 1
+                } else {
+                    return  -1
+                }
+            }
+
+            //Sorter på kort form (akkurat samme funksjonalitet)
+            personRegister.sort((a, b) => a.navn > b.navn ? 1 : -1)
+
+            alternativSkrivUt(personRegister)
+        }
+
+        function  srkivUt(personRegister) {
+            let strong, endstrong
+            let rad = 0
+
+            let ut = "<table><tr>" +
+                "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
+                "</tr>";
+
+            for (let p of personRegister){
+                if (rad % 2 === 0) {
+                    strong ="";
+                    endstrong = "";
+                } else {
+                    strong = "<strong>"
+                    endstrong = "</strong>"
+                }
+                rad++
+
+                ut+="<tr>";
+                ut+="<td>"+strong+p.navn+endstrong+"</td><td>"+strong+p.adresse+endstrong+"</td><td>"+strong+p.telefonnr+endstrong+"</td>";
+                ut+="</tr>";
+            }
+
+            document.getElementById("personRegister").innerHTML+=ut;
+        }
+
+        //Alternativ versjon for skriv ut (akkurat samme funksjonalitet)
+        function alternativSkrivUt(personRegister) {
+            let strong, endstrong
+            let rad = 0
+
+            let personer = "";
+
+            for (let p of personRegister) {
+                if (rad % 2 === 0) {
+                    strong ="";
+                    endstrong = "";
+                } else {
+                    strong = "<strong>"
+                    endstrong = "</strong>"
+                }
+                rad++
+
+                personer +=
+                    `
+                    <tr>
+                        <td>${strong}${p.navn}${endstrong}</td>
+                        <td>${strong}${p.adresse}${endstrong}</td>
+                        <td>${strong}${p.telefonnr}${endstrong}</td>
+                    </tr>
+                    `
+            }
+
+            let ut =
+                `
+                <table>
+                    <tr>
+                        <th>Navn</th><th>Adresse</th><th>Telefonnr</th>
+                    </tr>
+                    ${personer}
+                </table>
+                `
+            document.getElementById("personRegister").innerHTML+=ut;
+        }
+    </script>
+
+</body>
+</html>
