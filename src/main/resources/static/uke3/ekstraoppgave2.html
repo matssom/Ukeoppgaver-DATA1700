@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstraoppgave 2</title>
+</head>
+<body>
+
+<label for="skrivInn">Todo liste:</label>
+<input id="skrivInn" type="text" placeholder="skriv inn gjøremål" onchange="leggTilGjoremol()">
+
+<h1>Gjøremål</h1>
+<ul id="uferdig"></ul>
+<ul id="ferdig"></ul>
+
+<script>
+
+    const uferdig = document.getElementById("uferdig");
+    const ferdig = document.getElementById("ferdig");
+    const skrivInn = document.getElementById("skrivInn")
+
+    let id = 0;
+
+    function leggTilGjoremol() {
+        //Inkrementer id
+        id++;
+
+        let ut;
+        ut =    '<li id="rad-' + id + '">'
+        ut +=   '<input id="sjekkboks-' + id + '" type="checkbox" onchange="veksleStatus(' + id + ')">'
+        ut +=   "<span>" + skrivInn.value + "</span>"
+        ut +=   "</li>"
+
+        //Tøm skriv inn feltet
+        skrivInn.value = ""
+
+        //Print gjøremål til tabell
+        uferdig.innerHTML += ut;
+    }
+
+    function veksleStatus(id) {
+        //Hent raden og sjekkboksen basert på id'en
+        const sjekkbox = document.getElementById("sjekkboks-" + id)
+        const rad = document.getElementById("rad-" + id)
+
+        //Flytt raden avhengig av om sjekkboksen er sjekket
+        if (sjekkbox.checked) {
+            rad.style.textDecoration = 'line-through'
+            ferdig.appendChild(rad)
+        } else {
+            rad.style.textDecoration = 'none'
+            uferdig.appendChild(rad)
+        }
+    }
+
+</script>
+
+</body>
+</html>
