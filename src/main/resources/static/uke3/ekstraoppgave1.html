@@ -29,9 +29,13 @@
         ut +=   "<span>" + skrivInn.value + "</span>"
         ut +=   "</li>"
 
-        skrivInn.value = ""
+        omstillInput()
 
         liste.insertAdjacentHTML('beforeend', ut);
+    }
+
+    function omstillInput() {
+        skrivInn.value = ''
     }
 
 </script>

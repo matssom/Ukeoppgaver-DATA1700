@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uke 3 - Oppgave 3</title>
+</head>
+<body>
+
+    <div>
+        <label for="felt1">Felt 1:</label>
+        <input id="felt1" type="text">
+    </div>
+
+    <div>
+        <label for="felt2">Felt 2:</label>
+        <input id="felt2" type="text">
+    </div>
+
+    <div>
+        <button onclick="regnUt('pluss')">+</button>
+        <button onclick="regnUt('minus')">-</button>
+        <button onclick="regnUt('gange')">*</button>
+        <button onclick="regnUt('dele')">/</button>
+    </div>
+
+    <div>
+        <p id="resultatFelt"></p>
+    </div>
+
+    <script>
+
+        const felt1Inn = document.getElementById('felt1');
+        const felt2Inn = document.getElementById('felt2');
+        const resultatFelt = document.getElementById('resultatFelt');
+
+        function regnUt(operator) {
+
+            let verdi1 = Number(felt1Inn.value)
+            let verdi2 = Number(felt2Inn.value)
+
+            if(isNaN(verdi1) || isNaN(verdi2)) {
+                alert('Du må skrive inn gyldige tall')
+                return
+            }
+
+            let resultat
+
+            if (operator === 'pluss') resultat = verdi1 + verdi2
+            if (operator === 'minus') resultat = verdi1 - verdi2
+            if (operator === 'gange') resultat = verdi1 * verdi2
+            if (operator === 'dele')  resultat = verdi1 / verdi2
+
+            resultatFelt.innerText = resultat;
+        }
+
+    </script>
+
+</body>
+</html>

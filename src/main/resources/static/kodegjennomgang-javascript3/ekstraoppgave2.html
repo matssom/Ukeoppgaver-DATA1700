@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstraoppgave 2</title>
+    <style>
+        ul {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="skrivInn">Legg til gjøremål:</label>
+    <input type="text" onchange="leggTilGjoremol()" id="skrivInn" placeholder="skriv inn gjøremål">
+
+    <h1>Gjøremål</h1>
+    <ul id="uferdig"></ul>
+    <ul id="ferdig"></ul>
+
+    <script>
+
+        const uferdig = document.getElementById('uferdig')
+        const ferdig = document.getElementById('ferdig')
+        const skrivInn = document.getElementById('skrivInn')
+
+        let id = 0
+
+        function leggTilGjoremol() {
+            id++;
+            let ut;
+
+            ut = '<li id="rad-' + id + '">'
+            ut += '<input id="sjekkboks-' + id + '"  type="checkbox" onchange="veksleStatus(' + id + ')" />'
+            ut += '<label for="sjekkboks-' + id + '">' + skrivInn.value + '</label>'
+            ut += '</li>'
+
+            skrivInn.value = ''
+
+            uferdig.innerHTML += ut
+        }
+
+        function veksleStatus(id) {
+            const sjekkbox = document.getElementById('sjekkboks-' + id)
+            const rad = document.getElementById('rad-' + id)
+
+            if (sjekkbox.checked) {
+                rad.style.textDecoration = 'line-through'
+                ferdig.appendChild(rad)
+            } else {
+                rad.style.textDecoration = 'none'
+                uferdig.appendChild(rad)
+            }
+        }
+
+    </script>
+
+</body>
+</html>

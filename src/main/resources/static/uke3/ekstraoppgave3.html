@@ -33,9 +33,7 @@
         riktigIndex: 1
     }
 
-    oppgaver.push(oppgave1)
-    oppgaver.push(oppgave2)
-    oppgaver.push(oppgave3)
+    oppgaver.push(oppgave1, oppgave2, oppgave3)
 
     function skrivUtOppgaver() {
         let ut = ""
@@ -54,7 +52,6 @@
             ut += "</div>"
             ut += "</li>"
             oppgaveIndex++;
-
         }
 
         ut += '<button onclick="sjekkSvar()">Sjekk svar</button>'
@@ -67,6 +64,7 @@
 
         for(let oppgaveIndex = 0; oppgaveIndex < oppgaver.length; oppgaveIndex++) {
             const radioKnapper = document.querySelectorAll('[name="oppgave-' + oppgaveIndex + '"]');
+
             let svar
             for (let alternativ of radioKnapper) {
                 if (alternativ.checked) {

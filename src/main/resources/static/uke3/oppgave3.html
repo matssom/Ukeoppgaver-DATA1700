@@ -48,7 +48,11 @@
             if (operator === 'dele') resultat = verdi1 / verdi2
             if (operator === 'minus') resultat = verdi1 - verdi2
 
-            resultatUt.innerText = resultat
+            skrivUt(resultat)
+        }
+
+        function skrivUt(melding) {
+            resultatUt.innerText = melding
         }
 
     </script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstraoppgave 1</title>
+</head>
+<body>
+
+<label for="skrivInn">Legg til gjøremål:</label>
+<input type="text" onchange="leggTilGjoremol()" id="skrivInn" placeholder="skriv inn gjøremål">
+
+<h1>Gjøremål</h1>
+<ul id="liste"></ul>
+
+<script>
+
+    const liste = document.getElementById('liste')
+    const skrivInn = document.getElementById('skrivInn')
+    
+    function leggTilGjoremol() {
+        let ut;
+
+        ut = '<li>'
+        ut += '<input type="checkbox" />'
+        ut += '<span>' + skrivInn.value + '</span>'
+        ut += '</li>'
+
+        skrivInn.value = ''
+
+        liste.insertAdjacentHTML('beforeEnd', ut)
+    }
+
+</script>
+
+</body>
+</html>

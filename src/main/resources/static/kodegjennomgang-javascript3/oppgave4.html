@@ -15,47 +15,40 @@
         <input id="adresse" type="text">
     </div>
     <div>
-        <label for="telefonnr">Telefonnr: </label>
+        <label for="telefonnr">Telefonnr:</label>
         <input id="telefonnr" type="text">
     </div>
 
     <button onclick="leggTilPerson()">Legg til person</button>
-
     <div id="personRegister"></div>
 
     <script type="application/javascript">
 
-        const navn = document.getElementById('navn')
-        const adresse = document.getElementById('adresse')
-        const telefonnr = document.getElementById('telefonnr')
+        const navnInn = document.getElementById('navn')
+        const adresseInn = document.getElementById('adresse')
+        const telefonnrInn = document.getElementById('telefonnr')
         const registerUt = document.getElementById('personRegister')
 
         const personRegister=[];
 
+        function leggTilPerson() {
 
-        function leggTilPerson(){
-
-            const nyPerson = {
-                navn : navn.value,
-                adresse : adresse.value,
-                telefonnr : telefonnr.value
+            let nyPerson = {
+                navn: navnInn.value,
+                adresse: adresseInn.value,
+                telefonnr: telefonnrInn.value
             }
-
-            // Resetter alle input feltene
-            omstillFelter()
 
             personRegister.push(nyPerson)
 
-            skrivUtRegister()
+            navnInn.value = ''
+            adresseInn.value = ''
+            telefonnrInn.value = ''
+
+            skrivUt()
         }
 
-        function omstillFelter() {
-            navn.value = ''
-            adresse.value = ''
-            telefonnr.value = ''
-        }
-
-        function  skrivUtRegister() {
+        function  skrivUt() {
             // skriv ut
             let ut = "<table><tr>" +
                 "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
@@ -68,6 +61,7 @@
 
             registerUt.innerHTML=ut;
         }
+
     </script>
 
 </body>

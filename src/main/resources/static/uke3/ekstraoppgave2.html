@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekstraoppgave 2</title>
+    <style>
+        ul {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,14 +34,18 @@
         let ut;
         ut =    '<li id="rad-' + id + '">'
         ut +=   '<input id="sjekkboks-' + id + '" type="checkbox" onchange="veksleStatus(' + id + ')">'
-        ut +=   "<span>" + skrivInn.value + "</span>"
+        ut +=   '<label for="sjekkboks-' + id + '">' + skrivInn.value + '</label>'
         ut +=   "</li>"
-
-        //Tøm skriv inn feltet
-        skrivInn.value = ""
 
         //Print gjøremål til tabell
         uferdig.innerHTML += ut;
+
+        //Tøm skriv inn feltet
+        omstillInput()
+    }
+
+    function omstillInput() {
+        skrivInn.value = ''
     }
 
     function veksleStatus(id) {

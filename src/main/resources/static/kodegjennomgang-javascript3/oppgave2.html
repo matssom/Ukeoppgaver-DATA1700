@@ -13,6 +13,7 @@
         <label for="celcius">Celcius</label>
         <input onchange="konverter('celcius')" id="celcius" type="text">
     </div>
+
     <div>
         <label for="farenheit">Farenheit</label>
         <input onchange="konverter('farenheit')" id="farenheit" type="text">
@@ -26,20 +27,13 @@
         function konverter(konverterFra) {
 
             if (konverterFra === 'celcius') {
-                let celcius = parseFloat(celciusInn.value)
-                farenheitInn.value = celciusTilFarenheit(celcius)
+                let konvertert = (9 / 5) * celciusInn.value + 32
+                farenheitInn.value = konvertert
             } else {
-                let farenheit = parseFloat(farenheitInn.value)
-                celciusInn.value = farenheitTilCelcius(farenheit)
+                let konvertert = (5/9) * ( farenheitInn.value - 32)
+                celciusInn.value = konvertert
             }
-        }
 
-        function celciusTilFarenheit(celciusGrader) {
-            return (( 9 / 5 ) * celciusGrader + 32).toFixed(2)
-        }
-
-        function farenheitTilCelcius(farenheitGrader) {
-            return (( 5 / 9 ) * (farenheitGrader - 32)).toFixed(2)
         }
 
     </script>
