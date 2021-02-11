@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uke 3 - Oppgave 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div>
+        <label for="navn">Navn:</label>
+        <input id="navn" type="text">
+    </div>
+    <div>
+        <label for="adresse">Adresse:</label>
+        <input id="adresse" type="text">
+    </div>
+    <div>
+        <label for="telefonnr">Telefonnr: </label>
+        <input id="telefonnr" type="text">
+    </div>
+
+    <button onclick="leggTilPerson()">Legg til person</button>
+
+    <div id="personRegister"></div>
+
+    <script type="application/javascript">
+
+        const navn = document.getElementById('navn')
+        const adresse = document.getElementById('adresse')
+        const telefonnr = document.getElementById('telefonnr')
+
+        const personRegister=[];
+        const person1 = {
+            navn : "Line Jensen",
+            adresse : "Askerveien 82",
+            telefonnr : "12334455"
+        };
+        personRegister.push(person1);
+        const person2 = {
+            navn : "Ole Hansen",
+            adresse : "Osloveien 82",
+            telefonnr : "99887766"
+        };
+        personRegister.push(person2);
+
+        function leggTilPerson(){
+
+            const nyPerson = {
+                navn : navn.value,
+                adresse : adresse.value,
+                telefonnr : telefonnr.value
+            }
+
+            navn.value = ''
+            adresse.value = ''
+            telefonnr.value = ''
+
+            personRegister.push(nyPerson)
+
+            skrivUtRegister()
+        }
+
+        function  skrivUtRegister() {
+            // skriv ut
+            let ut = "<table><tr>" +
+                "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
+                "</tr>";
+            for (let p of personRegister){
+                ut+="<tr>";
+                ut+="<td>"+p.navn+"</td><td>"+p.adresse+"</td><td>"+p.telefonnr+"</td>";
+                ut+="</tr>";
+            }
+
+            document.getElementById("personRegister").innerHTML=ut;
+        }
+    </script>
+
+</body>
+</html>

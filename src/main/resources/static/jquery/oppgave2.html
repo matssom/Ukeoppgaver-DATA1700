@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uke 3 - Oppgave 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <label for="celcius">Celcius</label>
+        <input onchange="konverter('celcius')" id="celcius" type="text">
+    </div>
+    <div>
+        <label for="farenheit">Farenheit</label>
+        <input onchange="konverter('farenheit')" id="farenheit" type="text">
+    </div>
+
+    <script>
+
+        const celciusInn = document.getElementById('celcius')
+        const farenheitInn = document.getElementById('farenheit')
+
+        function konverter(konverterFra) {
+            if (konverterFra === 'celcius') {
+                farenheitInn.value = (( 9 / 5 ) * celciusInn.value + 32).toFixed(2)
+            } else {
+                celciusInn.value = (( 5 / 9 ) * (farenheitInn.value - 32)).toFixed(2)
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uke 3 - Oppgave 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <label for="name">Navn: </label>
+        <input id="name" type="text">
+    </div>
+    <div>
+        <label for="age">Alder:</label>
+        <input id="age" type="text">
+    </div>
+
+    <button onclick="sjekkFelter()">Send inn</button>
+
+    <script>
+
+        const innNavn = $('#name')
+        const innAlder = $('#age')
+
+        console.log(innAlder)
+
+        function sjekkFelter() {
+            let navn = innNavn.val()
+            let alder = Number(innAlder.val()) // en streng vil bli omgjort til NaN
+
+            if (isNaN(alder)) {
+                alert('Du må skrive inn en gyldig alder')
+                return;
+            }
+
+            alert('Hei, ' + navn + '. Du er ' + alder + ' år gammel')
+        }
+
+    </script>
+
+</body>
+</html>

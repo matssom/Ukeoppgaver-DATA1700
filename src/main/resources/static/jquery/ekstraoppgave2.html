@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstraoppgave 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<label for="skrivInn">Todo liste:</label>
+<input id="skrivInn" type="text" placeholder="skriv inn gjøremål" onchange="leggTilGjoremol()">
+
+<h1>Gjøremål</h1>
+<ul id="uferdig"></ul>
+<ul id="ferdig"></ul>
+
+<script>
+
+    const uferdig = $("#uferdig");
+    const ferdig = $("#ferdig");
+    const skrivInn = $("#skrivInn");
+
+    let id = 0;
+
+    function leggTilGjoremol() {
+        //Inkrementer id
+        id++;
+
+        let ut;
+        ut =    '<li id="rad-' + id + '">'
+        ut +=   '<input id="sjekkboks-' + id + '" type="checkbox" onchange="veksleStatus(' + id + ')">'
+        ut +=   "<span>" + skrivInn.val() + "</span>"
+        ut +=   "</li>"
+
+        //Tøm skriv inn feltet
+        skrivInn.val('')
+
+        //Print gjøremål til tabell
+        uferdig.append(ut)
+    }
+
+    function veksleStatus(id) {
+        //Hent raden og sjekkboksen basert på id'en
+        const sjekkbox = $("#sjekkboks-" + id)
+        const rad = $("#rad-" + id)
+
+        //Flytt raden avhengig av om sjekkboksen er sjekket
+        if (sjekkbox.checked) {
+            rad.css({'text-decoration' : 'line-through'})
+            ferdig.append(rad)
+        } else {
+            rad.css({'text-decoration' : 'none'})
+            uferdig.append(rad)
+        }
+    }
+
+</script>
+
+</body>
+</html>
