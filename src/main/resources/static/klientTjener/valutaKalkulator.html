@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <title>Valuta Kalkulator</title>
+</head>
+<body>
+
+    <h1>Valuta Kalkulator</h1>
+    <button onclick="lastInn()">Last inn verdier</button>
+
+    <script>
+        const lastInn = () => {
+            $.post('/valuta', (data, status) => {
+                if (status === "success") {
+                    alert("Kurser er lastet inn på serveren")
+
+                } else {
+                    alert("Det skjedde noe feil")
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

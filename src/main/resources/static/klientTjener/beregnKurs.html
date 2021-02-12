@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <title>Valuta Kalkulator</title>
+</head>
+<body>
+
+    <h1>Valuta Kalkulator</h1>
+
+    <label for="sort">Sort</label>
+    <input id="sort" type="text">
+
+    <label for="belop"></label>
+    <input id="belop" type="text">
+
+    <button onclick="beregn()">Beregn</button>
+
+    <script>
+        const sortInn = document.getElementById('sort')
+        const belopInn = document.getElementById('belop')
+
+        const beregn = () => {
+
+            const belop = {
+                sort: sortInn.value,
+                belop: isNaN(Number(belopInn.value)) ? 0 : belopInn.value
+            }
+            $.get('/valuta', belop, (belop, status) => {
+                alert(`${belopInn.value} ${sortInn.value} er ${belop} i NOK`)
+            });
+        }
+    </script>
+
+</body>
+</html>

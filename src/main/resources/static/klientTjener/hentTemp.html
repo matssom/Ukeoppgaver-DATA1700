@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        function hentTemp(){
+            const maaned = $("#maaned").val();
+            const url = "/hentTemp?maaned="+maaned;
+            $.get(url,function(temp){
+                    const ut="Det var en gjennomsnittstemperatur på "+temp+" grader i "+maaned;
+                    $("#resultat").html(ut);
+                }
+            )
+        }
+    </script>
+</head>
+<body>
+<h3>Finn gjennomsnittstemperaturen i Oslo</h3>
+<p>Skriv inn ønsket måned (f.eks: Januar)</p>
+<input type="text" id="maaned"/>
+<button onclick="hentTemp()">Hent temperatur</button>
+<div id="resultat"></div>
+</body>
+</html>
