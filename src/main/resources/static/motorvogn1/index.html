@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Motorvognregister</title>
+</head>
+<body>
+<h1>Motorvognregister</h1>
+<table>
+    <tr>
+        <td>Eiers personnummer</td><td>Eiers navn</td><td>Eiers adresse</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="personnr"/></td>
+        <td><input type="text" id="navn"/></td>
+        <td><input type="text" id="adresse"/></td>
+    </tr>
+    <tr>
+        <td>Kjennetegn</td><td>Bilmerke</td><td>Biltype</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="kjennetegn"/></td>
+        <td><input type="text" id="merke"/></td>
+        <td><input type="text" id="type"/></td>
+    </tr>
+</table>
+<button onclick="regMotorvogn()">Registrer</button><br/>
+Alle bilene:
+<div id="bilene"></div>
+<button onclick="slettAlle()">Slett alle</button><br/>
+
+<script type="application/javascript">
+    function regMotorvogn() {
+        const motorvogn = {
+            personnr : $("#personnr").val(),
+            navn : $("#navn").val(),
+            adresse : $("#adresse").val(),
+            kjennetegn : $("#kjennetegn").val(),
+            merke : $("#merke").val(),
+            type : $("#type").val(),
+        };
+        $.post("/motorvogn", motorvogn, function(){
+            hentAlle();
+        });
+        $("#personnr").val("");
+        $("#navn").val("");
+        $("#adresse").val("");
+        $("#kjennetegn").val("");
+        $("#merke").val("");
+        $("#type").val("");
+    }
+
+    function hentAlle() {
+        $.get( "/motorvogn", function( biler ) {
+            formaterData(biler);
+        });
+    }
+
+    function formaterData(biler) {
+        let ut = "<table><tr><th>Personnr</th><th>Navn</th><th>Adresse</th>" +
+            "<th>Kjennetegn</th><th>Merke</th><th>Type</th></tr>";
+        for (const bil of biler) {
+            ut += "<tr><td>" + bil.personnr + "</td><td>" + bil.navn + "</td><td>" + bil.adresse + "</td>" +
+                "<td>" + bil.kjennetegn + "</td><td>" + bil.merke + "</td><td>" + bil.type + "</td></tr>";
+        }
+        ut += "</table>";
+        $("#bilene").html(ut);
+    }
+
+    function slettAlle() {
+        $.ajax("/motorvogn", {
+            type: 'DELETE',
+            success: () => hentAlle(),
+            error: (jqXhr, textStatus, errorMessage) => console.log(errorMessage)
+        });
+    }
+
+    hentAlle()
+</script>
+</body>
+</html>
