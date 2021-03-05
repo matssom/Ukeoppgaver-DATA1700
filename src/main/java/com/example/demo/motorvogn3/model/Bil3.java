@@ -1,15 +1,12 @@
 package com.example.demo.motorvogn3.model;
 
-public class Bil {
+public class Bil3 {
     private String merke;
     private String type;
 
-    public Bil(String merke, String type) {
+    public Bil3(String merke, String type) {
         this.merke = merke;
         this.type = type;
-    }
-
-    public Bil() {
     }
 
     public String getMerke() {

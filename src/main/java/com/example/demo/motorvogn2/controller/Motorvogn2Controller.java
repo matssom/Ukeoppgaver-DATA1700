@@ -1,6 +1,6 @@
 package com.example.demo.motorvogn2.controller;
 
-import com.example.demo.motorvogn2.model.Motorvogn;
+import com.example.demo.motorvogn2.model.Motorvogn2;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,17 +8,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("2")
-public class MotorvognController {
+public class Motorvogn2Controller {
 
-    public final List<Motorvogn> motorvognsRegister = new ArrayList<>();
+    public final List<Motorvogn2> motorvognsRegister = new ArrayList<>();
 
     @PostMapping("/motorvogn")
-    public void lagreKunde(Motorvogn bil){
+    public void lagreKunde(Motorvogn2 bil){
         motorvognsRegister.add(bil);
     }
 
     @GetMapping("/motorvogn")
-    public List<Motorvogn> hentAlle(){
+    public List<Motorvogn2> hentAlle(){
         return motorvognsRegister;
     }
 
