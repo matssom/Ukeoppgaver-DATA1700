@@ -1,4 +1,4 @@
-package oslomet.webprog;
+package com.example.demo.motorvogn3.model;
 
 public class Motorvogn {
     private String personnr;

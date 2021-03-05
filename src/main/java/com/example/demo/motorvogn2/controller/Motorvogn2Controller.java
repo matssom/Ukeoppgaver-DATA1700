@@ -1,28 +1,28 @@
-package oslomet.webprog;
+package com.example.demo.motorvogn2.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.motorvogn2.model.Motorvogn;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("2")
 public class MotorvognController {
 
     public final List<Motorvogn> motorvognsRegister = new ArrayList<>();
 
-    @PostMapping("/lagre")
+    @PostMapping("/motorvogn")
     public void lagreKunde(Motorvogn bil){
         motorvognsRegister.add(bil);
     }
 
-    @GetMapping("/hentAlle")
+    @GetMapping("/motorvogn")
     public List<Motorvogn> hentAlle(){
         return motorvognsRegister;
     }
 
-    @GetMapping("/slettAlle")
+    @DeleteMapping("/motorvogn")
     public void slettAlle(){
         motorvognsRegister.clear();
     }

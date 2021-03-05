@@ -7,7 +7,7 @@ function regMotorvogn() {
         merke : $("#merke").val(),
         type : $("#type").val(),
     };
-    $.post("/motorvogn", motorvogn, function(){
+    $.post("/2/motorvogn", motorvogn, function(){
         hentAlle();
     });
     $("#personnr").val("");
@@ -19,7 +19,7 @@ function regMotorvogn() {
 }
 
 function hentAlle() {
-    $.get( "/motorvogn", function( biler ) {
+    $.get( "/2/motorvogn", function( biler ) {
         formaterData(biler);
     });
 }
@@ -36,7 +36,7 @@ function formaterData(biler) {
 }
 
 function slettAlle() {
-    $.ajax("/motorvogn", {
+    $.ajax("/2/motorvogn", {
         type: 'DELETE',
         success: () => hentAlle(),
         error: (jqXhr, textStatus, errorMessage) => console.log(errorMessage)
