@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api")
-public class MotorvognController {
+public class Motorvogn3Controller {
 
     @Autowired
     MotorvognRepository repo;
