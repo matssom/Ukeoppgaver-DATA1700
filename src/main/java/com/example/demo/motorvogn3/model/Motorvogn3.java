@@ -17,9 +17,6 @@ public class Motorvogn3 {
         this.type = type;
     }
 
-    public Motorvogn3() {
-    }
-
     public String getPersonnr() {
         return personnr;
     }
