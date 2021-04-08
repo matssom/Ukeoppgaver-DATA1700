@@ -21,14 +21,14 @@ $(() => {
 
 /* Snakker med api'en */
 const api = {
-    hentMotorvogner: () => $.get("/api/motor", motorvogner => formater(motorvogner)),
-    opprettMotorvogn: motorvogn => $.post("/api/motor", motorvogn, () => api.hentMotorvogner()),
-    slettMotorvogner: () => $.ajax("/api/motor", {
+    hentMotorvogner: () => $.get("/api/3/motor", motorvogner => formater(motorvogner)),
+    opprettMotorvogn: motorvogn => $.post("/api/3/motor", motorvogn, () => api.hentMotorvogner()),
+    slettMotorvogner: () => $.ajax("/api/3/motor", {
         type: 'DELETE',
         success: () => api.hentMotorvogner(),
         error: (jqXhr, textStatus, errorMessage) => console.log(errorMessage)
     }),
-    hentBilmerker: () => $.get("/api/bil", biler => fyllInnBilmerker(biler))
+    hentBilmerker: () => $.get("/api/3/bil", biler => fyllInnBilmerker(biler))
 }
 
 const registrerMotorvogn = () => {

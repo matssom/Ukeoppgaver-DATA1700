@@ -1,15 +1,13 @@
 package com.example.demo.motorvogn1.controller;
 
 import com.example.demo.motorvogn1.model.Motorvogn;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/1")
 public class MotorvognController {
 
     public final List<Motorvogn> motorvognsRegister = new ArrayList<>();

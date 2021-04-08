@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("2")
+@RequestMapping("/api/2")
 public class Motorvogn2Controller {
 
     public final List<Motorvogn2> motorvognsRegister = new ArrayList<>();

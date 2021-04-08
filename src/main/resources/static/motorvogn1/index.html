@@ -40,7 +40,7 @@ Alle bilene:
             merke : $("#merke").val(),
             type : $("#type").val(),
         };
-        $.post("/motorvogn", motorvogn, function(){
+        $.post("/api/1//motorvogn", motorvogn, function(){
             hentAlle();
         });
         $("#personnr").val("");
@@ -52,7 +52,7 @@ Alle bilene:
     }
 
     function hentAlle() {
-        $.get( "/motorvogn", function( biler ) {
+        $.get( "/api/1/motorvogn", function( biler ) {
             formaterData(biler);
         });
     }
@@ -69,7 +69,7 @@ Alle bilene:
     }
 
     function slettAlle() {
-        $.ajax("/motorvogn", {
+        $.ajax("/api/1//motorvogn", {
             type: 'DELETE',
             success: () => hentAlle(),
             error: (jqXhr, textStatus, errorMessage) => console.log(errorMessage)
