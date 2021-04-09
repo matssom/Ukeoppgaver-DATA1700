@@ -7,6 +7,9 @@ Løsningsforslag vil bli lagt ut på slutten av uken hver uke.
 
 <br>
 
+**Alle ukeoppgaver på heroku:**
+https://webprog-ukeoppgaver.herokuapp.com/
+
 **Link til static folder:**
 https://github.com/matssom/Ukeoppgaver-DATA1700/tree/master/src/main/resources/static
 
@@ -17,5 +20,5 @@ https://github.com/matssom/Ukeoppgaver-DATA1700/tree/master/src/main/java/com/ex
 
 :question: **Spørsmål?** Send meg en mail på [s341829@oslomet.no](mailto:s341829@oslomet.no)
 
-:exclamation: **NB:** Alle oppgavene er brutt opp i separate filer og ligger fordelt i mapper for hver uke, både i `java` (backend) delen og `javascript` (frontend) delen. `motorvogn1`, `klientTjener` osv..
+:exclamation: **NB:** Alle oppgavene er brutt opp i separate filer og ligger fordelt i mapper for hvert tema, både i `java` (backend) delen og `javascript` (frontend) delen. `motorvogn`, `klientTjener` osv..
 
