@@ -1,7 +1,7 @@
-package com.example.demo.motorvogn3.controller;
+package com.example.demo.motorvogn.motorvogn3.controller;
 
-import com.example.demo.motorvogn3.model.Bil3;
-import com.example.demo.motorvogn3.repository.BilRepository;
+import com.example.demo.motorvogn.motorvogn3.model.Bil3;
+import com.example.demo.motorvogn.motorvogn3.repository.BilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

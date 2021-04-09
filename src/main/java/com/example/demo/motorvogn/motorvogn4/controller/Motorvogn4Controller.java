@@ -1,8 +1,7 @@
-package com.example.demo.motorvogn4.controller;
+package com.example.demo.motorvogn.motorvogn4.controller;
 
-import com.example.demo.motorvogn4.model.Bil4;
-import com.example.demo.motorvogn4.model.Motorvogn4;
-import com.example.demo.motorvogn4.repository.Motorvogn4Repository;
+import com.example.demo.motorvogn.motorvogn4.model.Motorvogn4;
+import com.example.demo.motorvogn.motorvogn4.repository.Motorvogn4Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.example.demo.motorvogn3.model;
+package com.example.demo.motorvogn.motorvogn3.model;
 
 public class Bil3 {
     private String merke;

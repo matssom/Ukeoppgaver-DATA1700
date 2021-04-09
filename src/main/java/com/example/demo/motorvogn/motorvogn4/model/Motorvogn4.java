@@ -1,14 +1,14 @@
-package com.example.demo.motorvogn3.model;
+package com.example.demo.motorvogn.motorvogn4.model;
 
-public class Motorvogn3 {
-    private String personnr;
+public class Motorvogn4 {
+    private int personnr; // får problemer med å finne igjen rader i databasen dersom denne er String (primær nøkkel)
     private String navn;
     private String adresse;
     private String kjennetegn;
     private String merke;
     private String type;
 
-    public Motorvogn3(String personnr, String navn, String adresse, String kjennetegn, String merke, String type) {
+    public Motorvogn4(int personnr, String navn, String adresse, String kjennetegn, String merke, String type) {
         this.personnr = personnr;
         this.navn = navn;
         this.adresse = adresse;
@@ -17,11 +17,14 @@ public class Motorvogn3 {
         this.type = type;
     }
 
-    public String getPersonnr() {
+    public Motorvogn4() {
+    }
+
+    public int getPersonnr() {
         return personnr;
     }
 
-    public void setPersonnr(String personnr) {
+    public void setPersonnr(int personnr) {
         this.personnr = personnr;
     }
 

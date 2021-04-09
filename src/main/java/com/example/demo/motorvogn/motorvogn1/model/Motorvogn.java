@@ -1,6 +1,6 @@
-package com.example.demo.motorvogn2.model;
+package com.example.demo.motorvogn.motorvogn1.model;
 
-public class Motorvogn2 {
+public class Motorvogn {
     private String personnr;
     private String navn;
     private String adresse;
@@ -8,16 +8,13 @@ public class Motorvogn2 {
     private String merke;
     private String type;
 
-    public Motorvogn2(String personnr, String navn, String adresse, String kjennetegn, String merke, String type) {
+    public Motorvogn(String personnr, String navn, String adresse, String kjennetegn, String merke, String type) {
         this.personnr = personnr;
         this.navn = navn;
         this.adresse = adresse;
         this.kjennetegn = kjennetegn;
         this.merke = merke;
         this.type = type;
-    }
-
-    public Motorvogn2() {
     }
 
     public String getPersonnr() {

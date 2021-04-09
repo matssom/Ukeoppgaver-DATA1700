@@ -1,6 +1,6 @@
-package com.example.demo.motorvogn3.repository;
+package com.example.demo.motorvogn.motorvogn3.repository;
 
-import com.example.demo.motorvogn3.model.Motorvogn3;
+import com.example.demo.motorvogn.motorvogn3.model.Motorvogn3;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

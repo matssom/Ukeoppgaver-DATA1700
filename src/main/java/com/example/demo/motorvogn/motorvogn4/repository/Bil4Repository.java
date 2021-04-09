@@ -1,6 +1,6 @@
-package com.example.demo.motorvogn4.repository;
+package com.example.demo.motorvogn.motorvogn4.repository;
 
-import com.example.demo.motorvogn4.model.Bil4;
+import com.example.demo.motorvogn.motorvogn4.model.Bil4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

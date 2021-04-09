@@ -1,6 +1,6 @@
-package com.example.demo.motorvogn2.controller;
+package com.example.demo.motorvogn.motorvogn2.controller;
 
-import com.example.demo.motorvogn2.model.Motorvogn2;
+import com.example.demo.motorvogn.motorvogn2.model.Motorvogn2;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
